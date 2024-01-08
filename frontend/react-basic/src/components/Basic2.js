@@ -1,3 +1,4 @@
+//useStateを使って、配列を追加する
 import React, { useState } from 'react'
 
 const Basic2 = () => {
@@ -21,5 +22,5 @@ const Basic2 = () => {
     </div>
   )
 }
-
+// export default は一つのファイルに一つだけ
 export default Basic2

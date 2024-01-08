@@ -1,24 +1,30 @@
 import React, { useState } from 'react'
 
-const Basic1 = (props) => {
-    const clickHandler = () => {
-        console.log("Button Clicked");
-    }
+const Basic1 = () => {
+
 
     // practice useState
-    const [count, setCount] = useState(0);
+    const [product, setProducts] = useState({name: '', price: ''});
 
   return (
     <>
-        <button onClick={() => {
-            setCount(prevCount=>prevCount+1);
-            setCount(prevCount=>prevCount+1);
-            }    
-        }>Count {count}</button>
-        <h1>from Basic1</h1>
-        <p>this component is called from Basic1.js</p>
-        <p>props.name: {props.name}</p>
-        {/* <button onClick={clickHandler}>Click Me</button> */}
+    <form>
+        <input type="text" value={product.name} 
+        onChange={evt => setProducts({
+            // ... オブジェクトの中身を分解させる
+            ...product,
+            // name だけ上書きする
+            name: evt.target.value
+        })}/>
+        <input type="text" value={product.price}
+        onChange={evt => setProducts({
+            ...product,
+            price: evt.target.value
+        })}/>
+    </form>
+    <h1>Product name is {product.name}</h1>
+    <h1>Product price is {product.price}</h1>
+
     </>
 
   )

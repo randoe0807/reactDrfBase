@@ -10,7 +10,11 @@ const Basic1 = (props) => {
 
   return (
     <>
-        <button onClick={() => setCount(count+1)}>Count {count}</button>
+        <button onClick={() => {
+            setCount(prevCount=>prevCount+1);
+            setCount(prevCount=>prevCount+1);
+            }    
+        }>Count {count}</button>
         <h1>from Basic1</h1>
         <p>this component is called from Basic1.js</p>
         <p>props.name: {props.name}</p>
